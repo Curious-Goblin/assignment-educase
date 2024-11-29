@@ -9,7 +9,7 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
     const distLon = toRadian(lon2 - lon1);
 
     const a = 
-        Math.sin(distLat / 2) * Math.sin(dLat / 2) +
+        Math.sin(distLat / 2) * Math.sin(distLat / 2) +
         Math.cos(toRadian(lat1)) * Math.cos(toRadian(lat2)) *
         Math.sin(distLon / 2) * Math.sin(distLon / 2);
 
@@ -34,6 +34,7 @@ router.post('/addSchool', (req, res) => {
     });
 });
 
+// List Schools API
 router.get('/listSchools', (req, res) => {
     const { latitude, longitude } = req.query;
 
